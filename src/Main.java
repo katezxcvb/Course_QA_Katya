@@ -4,19 +4,13 @@ import java.util.Arrays;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    public static class HomeWork{
+    
         // 1. Создайте метод printThreeWords(), который при вызове должен
-//  отпечатать в столбец три слова: , Banana, Apple
+        //  отпечатать в столбец три слова: , Banana, Apple
         public static void printThreeWords(){
             System.out.println("Orange\nBanana\nApple");
         }
 
-        public static void printThreeWords1() {
-            String[] words = {"Orange", "Banana", "Apple"};
-            for (String word : words) {
-                System.out.println(word);
-            }
-        }
 //        2. Создайте метод checkSumSign(), в теле которого объявите две
 //        int переменные a и b, и инициализируйте их любыми значениями,
 //        которыми захотите. Далее метод должен просуммировать эти переменные,
@@ -35,7 +29,6 @@ public class Main {
             }
 
         }
-
 //        3. Создайте метод printColor() в теле которого задайте int
 //        переменную value и инициализируйте ее любым значением. Если
 //        value меньше 0 (0 включительно), то в консоль метод должен
@@ -291,101 +284,95 @@ public static void printAndConvertArray(int[] array) {
 
             return array;
         }
-    }
 
     public static void main(String[] args) {
         System.out.println( "\nМетод 1 - " );
-        HomeWork.printThreeWords();
-        HomeWork.printThreeWords1();
+        printThreeWords();
         System.out.println( "  " );
         System.out.println( "\nМетод 2 - " );
-        HomeWork.checkSumSign();
-        System.out.println("\nМетод 3 - printColor()");
-        HomeWork.printColor(-10);   // Красный
-        HomeWork.printColor(0);     // Красный
-        HomeWork.printColor(50);    // Жёлтый
-        HomeWork.printColor(100);   // Жёлтый
-        HomeWork.printColor(150);   // Зелёный
+        checkSumSign();
+        System.out.println("\nМетод 3 - )");
+        printColor(-10);
+        printColor(0);
+        printColor(100);
+        printColor(150);
         System.out.println("\n Метод 4 ");
-        HomeWork.compareNumbers(10, 5);     // a >= b
-        HomeWork.compareNumbers(5, 10);     // a < b
-        HomeWork.compareNumbers(7, 7);      // a >= b
+        compareNumbers(10, 5);
+        compareNumbers(5, 10);
+        compareNumbers(7, 7);
         System.out.println("\n Метод 5 ");
-        System.out.println(HomeWork.checkSumInRangeIfElse(5, 5));  // true
-        System.out.println(HomeWork.checkSumInRangeIfElse(2, 3));  // false
+        System.out.println(checkSumInRangeIfElse(5, 5));  // true
+        System.out.println(checkSumInRangeIfElse(2, 3));  // false
         // С переменными:
         int num1 = 8;
         int num2 = 9;
-        boolean isInRange = HomeWork.checkSumInRangeIfElse(num1, num2);
+        boolean isInRange = checkSumInRangeIfElse(num1, num2);
         System.out.println("Результат: " + isInRange);  // true (17)
 
         System.out.println("\nМетод 6 -");
-        HomeWork.checkNumberSign(10);      // положительное
-        HomeWork.checkNumberSign(-5);      // отрицательное
-        HomeWork.checkNumberSign(0);       // положительное (по условию)
-        HomeWork.checkNumberSign(100);     // положительное
-        HomeWork.checkNumberSign(-100);    // отрицательное
-
+        checkNumberSign(10);
+        checkNumberSign(-5);
+        checkNumberSign(0);
+        checkNumberSign(100);
+        checkNumberSign(-100);
 
         System.out.println("\nГраничные значения:");
-        HomeWork.checkNumberSign(Integer.MAX_VALUE);
-        HomeWork.checkNumberSign(Integer.MIN_VALUE);
+        checkNumberSign(Integer.MAX_VALUE);
+        checkNumberSign(Integer.MIN_VALUE);
 
         System.out.println("\nМетод 7 -");
         System.out.println("\nIf-else версия:");
-        System.out.println("isNegativeIfElse(7) = " + HomeWork.isNegativeIfElse(7));    // false
-        System.out.println("isNegativeIfElse(-3) = " + HomeWork.isNegativeIfElse(-3));  // true
-        System.out.println("isNegativeIfElse(0) = " + HomeWork.isNegativeIfElse(0));    // false
+        System.out.println("isNegativeIfElse(7) = " + isNegativeIfElse(7));    // false
+        System.out.println("isNegativeIfElse(-3) = " + isNegativeIfElse(-3));  // true
+        System.out.println("isNegativeIfElse(0) = " + isNegativeIfElse(0));    // false
         System.out.println("\nМетод 8 -");
-        HomeWork.printStringMultipleTimesSafe("Java is fun", 3);
+        printStringMultipleTimesSafe("Java is fun", 3);
         System.out.println("---");
-        HomeWork.printStringMultipleTimesSafe("Не напечатается", 0);
+        printStringMultipleTimesSafe("Не напечатается", 0);
         System.out.println("---");
-        HomeWork.printStringMultipleTimesSafe("Не напечатается", -3);
+        printStringMultipleTimesSafe("Не напечатается", -3);
         System.out.println("---");
-        HomeWork.printStringMultipleTimesSafe(null, 5);
+        printStringMultipleTimesSafe(null, 5);
         System.out.println("\nМетод 9-");
-        System.out.println("2000 год високосный? " + HomeWork.isLeapYear(2000)); // true
-        System.out.println("1900 год високосный? " + HomeWork.isLeapYear(1900)); // false
-        System.out.println("2024 год високосный? " + HomeWork.isLeapYear(2024)); // true
-        System.out.println("2023 год високосный? " + HomeWork.isLeapYear(2023)); // false
-        System.out.println("1600 год високосный? " + HomeWork.isLeapYear(1600)); // true
-        System.out.println("1700 год високосный? " + HomeWork.isLeapYear(1700)); // false
-        System.out.println("0 год високосный? " + HomeWork.isLeapYear(0)); // false
-        System.out.println("-234 год високосный? " + HomeWork.isLeapYear(-234)); // false
+        System.out.println("2000 год високосный? " + isLeapYear(2000));
+        System.out.println("1900 год високосный? " + isLeapYear(1900));
+        System.out.println("2024 год високосный? " + isLeapYear(2024));
+        System.out.println("2023 год високосный? " + isLeapYear(2023));
+        System.out.println("1600 год високосный? " + isLeapYear(1600));
+        System.out.println("1700 год високосный? " + isLeapYear(1700));
         System.out.println("\nМетод 10 -");
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         int[] array2 = {-1, 0, 0, 2, 1, 0, 1, 1, 1, 1};
         int[] array3 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        System.out.println("=== Вариант 1 ===");
-        HomeWork.printAndConvertArray(array);
-        HomeWork.printAndConvertArray(array2);
-        HomeWork.printAndConvertArray(array3);
+        System.out.println("Вариант 1 ");
+        printAndConvertArray(array);
+        printAndConvertArray(array2);
+        printAndConvertArray(array3);
 
         System.out.println("\nМетод 11-");
-        HomeWork.fillAndPrintArrayFormatted();
+        fillAndPrintArrayFormatted();
         System.out.println("\nМетод 12-");
-        HomeWork.multiplyWithForEach();
+        multiplyWithForEach();
         System.out.println("\nМетод 13-");
-        HomeWork.fillAndPrintCrossDiagonal();
+        fillAndPrintCrossDiagonal();
 
         System.out.println("\nМетод 14-");
-        System.out.println("=== Тест 1: Корректные данные ===");
-        int [] result1 =HomeWork.createAndPrintArray(5, 10);
+        System.out.println("Тест 1: Корректные данные");
+        int [] result1 =createAndPrintArray(5, 10);
         System.out.println(Arrays.toString(result1));
 
-        System.out.println("\n=== Тест 2: Другое значение ===");
-        int [] result2 = HomeWork.createAndPrintArray(3, 7);
+        System.out.println("\nТест 2: Другое значение");
+        int [] result2 = createAndPrintArray(3, 7);
         System.out.println(Arrays.toString(result2));
 
-        System.out.println("\n=== Тест 3: Некорректная длина ===");
-        int [] result3 = HomeWork.createAndPrintArray(0, 100);
-        int [] result4 = HomeWork.createAndPrintArray(-2, 50);
+        System.out.println("\nТест 3: Некорректная длина ");
+        int [] result3 = createAndPrintArray(0, 100);
+        int [] result4 = createAndPrintArray(-2, 50);
         System.out.println(Arrays.toString(result3));
         System.out.println(Arrays.toString(result4));
 
-        System.out.println("\n=== Тест 4: С параметром сообщения ===");
-        int [] result5 = HomeWork.createAndPrintArray( 4, 42);
+        System.out.println("\n Тест 4: С параметром сообщения");
+        int [] result5 = createAndPrintArray( 4, 42);
         System.out.println(Arrays.toString(result5));
     }
 }
