@@ -15,7 +15,6 @@ public class Main {
             String[] words = {"Orange", "Banana", "Apple"};
             for (String word : words) {
                 System.out.println(word);
-                System.out.println("");
             }
         }
 //        2. Создайте метод checkSumSign(), в теле которого объявите две
