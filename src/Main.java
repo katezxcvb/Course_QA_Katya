@@ -302,11 +302,6 @@ public class Main {
         System.out.println("\n Метод 5 ");
         System.out.println(checkSumInRangeIfElse(5, 5));  // true
         System.out.println(checkSumInRangeIfElse(2, 3));  // false
-        // С переменными:
-        int num1 = 8;
-        int num2 = 9;
-        boolean isInRange = checkSumInRangeIfElse(num1, num2);
-        System.out.println("Результат: " + isInRange);  // true (17)
 
         System.out.println("\nМетод 6 -");
         checkNumberSign(10);
