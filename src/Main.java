@@ -18,8 +18,8 @@ public class Main {
 //        “Сумма положительная”, в противном случае - “Сумма отрицательная”;
 
         public static void  checkSumSign(){
-            int a = 0;
-            int b = 87;
+            int a = -52;
+            int b = 90;
             int sum = a + b;
 
             if (0 <= sum) {
@@ -36,7 +36,9 @@ public class Main {
 //        до 100 (100 включительно), то “Желтый”, если больше 100 (100 исключительно) -
 //                “Зеленый”;
 
-        public static void printColor(int value){
+        public static void printColor() {
+            int value = 42; // Объявляем и инициализируем внутри метода
+
             if (value <= 0) {
                 System.out.println("Красный");
             } else if (value <= 100) {
@@ -51,7 +53,11 @@ public class Main {
 //        которыми захотите. Если a больше или равно b, то необходимо
 //        вывести в консоль сообщение “a >= b”, в противном случае “a < b”;
 
-        public static void compareNumbers(int a, int b) {
+
+        public static void compareNumbers() {
+            int a = 15;
+            int b = 10;
+
             if (a >= b) {
                 System.out.println("a >= b");
             } else {
@@ -117,10 +123,9 @@ public class Main {
 //        Каждый 4-й год является високосным, кроме каждого 100-го, при этом
 //            каждый 400-й – високосный.
             public static boolean isLeapYear(int year) {
-                // Проверка на отрицательные и нулевые значения
                 if (year <= 0) {
                     System.out.println("Ошибка: год должен быть положительным числом (получено: " + year + ")");
-                    return false; // или можно выбросить исключение
+                    return false;
                 }
 
                 if (year % 400 == 0) {
@@ -137,50 +142,50 @@ public class Main {
 //10. Задать целочисленный массив, состоящий из элементов 0 и 1.
 //        Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла
 //        и условия заменить 0 на 1, 1 на 0;
-public static void printAndConvertArray(int[] array) {
+        public static void printAndConvertArray(int[] array) {
 
-    if (array == null) {
-        System.out.println("Массив не может быть null");
-        return;
-    }
+            if (array == null) {
+                System.out.println("Массив не может быть null");
+                return;
+            }
 
-    if (array.length == 0) {
-        System.out.println("Массив пуст");
-        return;
-    }
+            if (array.length == 0) {
+                System.out.println("Массив пуст");
+                return;
+            }
 
-    System.out.print("Исходный массив: [");
-    for (int i = 0; i < array.length; i++) {
-        System.out.print(array[i]);
-        if (i < array.length - 1) {
-            System.out.print(", ");
+            System.out.print("Исходный массив: [");
+            for (int i = 0; i < array.length; i++) {
+                System.out.print(array[i]);
+                if (i < array.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println("]");
+
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == 0) {
+                    array[i] = 1;
+                } else if (array[i] == 1) {
+                    array[i] = 0;
+                } else if (array[i] < 0) {
+                    System.out.println("  Внимание: элемент [" + i + "] = " + array[i] +
+                            " (отрицательное число) - оставлен без изменений");
+                } else {
+                    System.out.println("  Внимание: элемент [" + i + "] = " + array[i] +
+                            " (не 0 и не 1) - оставлен без изменений");
+                }
+            }
+
+            System.out.print("Результат:       [");
+            for (int i = 0; i < array.length; i++) {
+                System.out.print(array[i]);
+                if (i < array.length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println("]");
         }
-    }
-    System.out.println("]");
-
-    for (int i = 0; i < array.length; i++) {
-        if (array[i] == 0) {
-            array[i] = 1;
-        } else if (array[i] == 1) {
-            array[i] = 0;
-        } else if (array[i] < 0) {
-            System.out.println("  Внимание: элемент [" + i + "] = " + array[i] +
-                    " (отрицательное число) - оставлен без изменений");
-        } else {
-            System.out.println("  Внимание: элемент [" + i + "] = " + array[i] +
-                    " (не 0 и не 1) - оставлен без изменений");
-        }
-    }
-
-    System.out.print("Результат:       [");
-    for (int i = 0; i < array.length; i++) {
-        System.out.print(array[i]);
-        if (i < array.length - 1) {
-            System.out.print(", ");
-        }
-    }
-    System.out.println("]");
-}
 
 
 //11. Задать пустой целочисленный массив длиной 100. С помощью цикла
@@ -222,7 +227,7 @@ public static void printAndConvertArray(int[] array) {
                 index++;
             }
 
-            System.out.println("Результат (новый массив):");
+            System.out.println("Результат:");
             printArray(result);
         }
         public static void printArray(int[] array) {
@@ -288,18 +293,12 @@ public static void printAndConvertArray(int[] array) {
     public static void main(String[] args) {
         System.out.println( "\nМетод 1 - " );
         printThreeWords();
-        System.out.println( "  " );
         System.out.println( "\nМетод 2 - " );
         checkSumSign();
-        System.out.println("\nМетод 3 - )");
-        printColor(-10);
-        printColor(0);
-        printColor(100);
-        printColor(150);
+        System.out.println("\nМетод 3 - ");
+        printColor();
         System.out.println("\n Метод 4 ");
-        compareNumbers(10, 5);
-        compareNumbers(5, 10);
-        compareNumbers(7, 7);
+        compareNumbers();
         System.out.println("\n Метод 5 ");
         System.out.println(checkSumInRangeIfElse(5, 5));  // true
         System.out.println(checkSumInRangeIfElse(2, 3));  // false
@@ -338,16 +337,13 @@ public static void printAndConvertArray(int[] array) {
         System.out.println("1900 год високосный? " + isLeapYear(1900));
         System.out.println("2024 год високосный? " + isLeapYear(2024));
         System.out.println("2023 год високосный? " + isLeapYear(2023));
-        System.out.println("1600 год високосный? " + isLeapYear(1600));
-        System.out.println("1700 год високосный? " + isLeapYear(1700));
         System.out.println("\nМетод 10 -");
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        int[] array2 = {-1, 0, 0, 2, 1, 0, 1, 1, 1, 1};
-        int[] array3 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        System.out.println("Вариант 1 ");
+        System.out.println("Массив 1 ");
         printAndConvertArray(array);
+        int[] array2 = {-1, 0, 0, 2, 1, 0, 1, 1, 1, 1};
+        System.out.println("Массив 2 ");
         printAndConvertArray(array2);
-        printAndConvertArray(array3);
 
         System.out.println("\nМетод 11-");
         fillAndPrintArrayFormatted();
