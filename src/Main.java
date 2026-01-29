@@ -313,18 +313,17 @@ public class Main {
         System.out.println("Число - (-3) = " + isNegativeIfElse(-3));
         System.out.println("Число - (0) = " + isNegativeIfElse(0));
         System.out.println("\nМетод 8 -");
-        printStringMultipleTimesSafe("Java is fun", 3);
+        printStringMultipleTimesSafe("Тестирование на Java", 3);
         System.out.println("---");
         printStringMultipleTimesSafe("Не напечатается", 0);
-        System.out.println("---");
-        printStringMultipleTimesSafe("Не напечатается", -3);
-        System.out.println("---");
         printStringMultipleTimesSafe(null, 5);
+
         System.out.println("\nМетод 9-");
         System.out.println("2000 год високосный? " + isLeapYear(2000));
         System.out.println("1900 год високосный? " + isLeapYear(1900));
         System.out.println("2024 год високосный? " + isLeapYear(2024));
         System.out.println("2023 год високосный? " + isLeapYear(2023));
+
         System.out.println("\nМетод 10 -");
         int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println("Массив 1 ");
@@ -341,21 +340,15 @@ public class Main {
         fillAndPrintCrossDiagonal();
 
         System.out.println("\nМетод 14-");
-        System.out.println("Тест 1: Корректные данные");
+        System.out.println("Массив:");
         int [] result1 =createAndPrintArray(5, 10);
         System.out.println(Arrays.toString(result1));
 
-        System.out.println("\nТест 2: Другое значение");
-        int [] result2 = createAndPrintArray(3, 7);
+        System.out.println("\n Некорректная длина ");
+        int [] result2 = createAndPrintArray(0, 100);
         System.out.println(Arrays.toString(result2));
 
-        System.out.println("\nТест 3: Некорректная длина ");
-        int [] result3 = createAndPrintArray(0, 100);
-        int [] result4 = createAndPrintArray(-2, 50);
-        System.out.println(Arrays.toString(result3));
-        System.out.println(Arrays.toString(result4));
-
-        System.out.println("\n Тест 4: С параметром сообщения");
+        System.out.println("\n С параметром сообщения");
         int [] result5 = createAndPrintArray( 4, 42);
         System.out.println(Arrays.toString(result5));
     }
