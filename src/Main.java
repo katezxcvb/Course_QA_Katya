@@ -308,15 +308,10 @@ public class Main {
         checkNumberSign(-53);
         checkNumberSign(0);
 
-        System.out.println("\nГраничные значения:");
-        checkNumberSign(Integer.MAX_VALUE);
-        checkNumberSign(Integer.MIN_VALUE);
-
         System.out.println("\nМетод 7 -");
-        System.out.println("\nIf-else версия:");
-        System.out.println("isNegativeIfElse(7) = " + isNegativeIfElse(7));    // false
-        System.out.println("isNegativeIfElse(-3) = " + isNegativeIfElse(-3));  // true
-        System.out.println("isNegativeIfElse(0) = " + isNegativeIfElse(0));    // false
+        System.out.println("Число - (7) = " + isNegativeIfElse(7));
+        System.out.println("Число - (-3) = " + isNegativeIfElse(-3));
+        System.out.println("Число - (0) = " + isNegativeIfElse(0));
         System.out.println("\nМетод 8 -");
         printStringMultipleTimesSafe("Java is fun", 3);
         System.out.println("---");
