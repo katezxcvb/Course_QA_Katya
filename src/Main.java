@@ -304,11 +304,9 @@ public class Main {
         System.out.println(checkSumInRangeIfElse(2, 3));  // false
 
         System.out.println("\nМетод 6 -");
-        checkNumberSign(10);
-        checkNumberSign(-5);
-        checkNumberSign(0);
         checkNumberSign(100);
-        checkNumberSign(-100);
+        checkNumberSign(-53);
+        checkNumberSign(0);
 
         System.out.println("\nГраничные значения:");
         checkNumberSign(Integer.MAX_VALUE);
