@@ -348,8 +348,5 @@ public class Main {
         int [] result2 = createAndPrintArray(0, 100);
         System.out.println(Arrays.toString(result2));
 
-        System.out.println("\n С параметром сообщения");
-        int [] result5 = createAndPrintArray( 4, 42);
-        System.out.println(Arrays.toString(result5));
     }
 }
