@@ -10,7 +10,6 @@ public class Main {
     public static void printThreeWords(){
         System.out.println("Orange\nBanana\nApple");
     }
-
 //        2. Создайте метод checkSumSign(), в теле которого объявите две
 //        int переменные a и b, и инициализируйте их любыми значениями,
 //        которыми захотите. Далее метод должен просуммировать эти переменные,
