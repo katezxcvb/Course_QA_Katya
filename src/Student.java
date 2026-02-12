@@ -35,6 +35,7 @@ public class Student {
         return grades;
     }
 
+    //Получение среднего балла
     public double getAverageGrade() {
         int sum = 0;
         for (int i = 0; i < grades.size(); i++) {
@@ -42,6 +43,7 @@ public class Student {
         }
         return (double) sum / grades.size();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -64,40 +66,16 @@ public class Student {
     //  Удаление студентов со средним баллом < 3
     public static void removeLowGradeStudents(Set<Student> students) {
         Set<Student> toRemove = new HashSet<>();
-
         for (Student s : students) {
             if (s.getAverageGrade() < 3) {
                 toRemove.add(s);
             }
         }
-
         students.removeAll(toRemove);
+    }
 
-    }
-    public static double getNumber(List<Integer> list){
-        int a = 0;
-        for (Integer elem:list){
-            a+=elem;
-        }
-        return (double) a /list.size();
-    }
 
     // Перевод студентов на следующий курс (если средний балл ≥ 3)
-    public static void upgradeStudents(Set<Student> students) {
-        List<Student> list = students.stream().filter((elem)->
-                Student.getNumber(elem.grades)>=3).collect(Collectors.toList());
-        System.out.println(Arrays.asList(list));
-
-        Iterator<Student> iterator = students.iterator();
-
-        while (iterator.hasNext()) {
-            Student s = iterator.next();
-            if (s.getAverageGrade() >= 3) {
-                s.setCourse(s.getCourse() + 1);
-            }
-        }
-    }
-
     public static void promoteStudents(Set<Student> students) {
         for (Student s : students) {
             if (s.getAverageGrade() >= 3) {
