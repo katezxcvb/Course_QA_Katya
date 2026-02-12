@@ -13,28 +13,29 @@ public class Main {
         students.add(new Student("Павел", "B2", 2, Arrays.asList(5, 5, 4, 5)));
         students.add(new Student("Анна", "C3", 3, Arrays.asList(1, 2, 2, 1)));
 
-        Student.upgradeStudents(students);
+        System.out.println("\n1-Список студентов");
+        for (Student s : students) {
+            System.out.println(s);
+        }
 
-        System.out.println("=== Исходный список студентов ===");
-        students.forEach(System.out::println);
 
-        // Удаляем студентов со средним баллом < 3
+        System.out.println("\n2-После удаления студентов со ср.баллом < 3");
         Student.removeLowGradeStudents(students);
+        for(Student s : students){
+            System.out.println(s);
+        }
 
-        System.out.println("\n=== После удаления студентов со ср.баллом < 3 ===");
-        students.forEach(System.out::println);
-
-        // Переводим студентов на следующий курс
+        System.out.println("\n3-Перевод на следующий курс");
         Student.promoteStudents(students);
+        for(Student s : students){
+            System.out.println(s);
+        }
 
-        System.out.println("\n=== После перевода на следующий курс ===");
-        students.forEach(System.out::println);
-
-        // Печатаем студентов определённого курса
-        System.out.println();
+        System.out.println("\n4-Студенты определенного курса");
         Student.printStudents(students, 2);
-        PhoneBook pb = new PhoneBook();
 
+        System.out.println("\nКЛАСС ТЕЛЕФОННЫЙ СПРАВОЧНИК");
+        PhoneBook pb = new PhoneBook();
         pb.add("Иванов", "123-45-67");
         pb.add("Петров", "555-55-55");
         pb.add("Иванов", "987-65-43");   // вторая запись для Иванова
